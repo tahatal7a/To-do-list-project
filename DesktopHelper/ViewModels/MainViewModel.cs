@@ -1,8 +1,12 @@
 using DesktopHelper.Models.Services;
+using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.Diagnostics;
+using System.Linq;
 using System.Windows.Input;
 using DesktopHelper.Commands;
-using System.Collections.Generic;
 
 namespace DesktopHelper.ViewModels
 {
@@ -10,6 +14,7 @@ namespace DesktopHelper.ViewModels
     {
         // Service to load and save tasks
         private readonly TaskService _taskService;
+        private readonly CalendarImportService _calendarImportService;
 
         // Holds the list of tasks displayed in the UI
         public static ObservableCollection<TaskItem> _tasks;
@@ -99,9 +104,15 @@ namespace DesktopHelper.ViewModels
         // Command to delete an existing task
         public ICommand DeleteTaskCommand { get; }
 
+        // Command to import tasks from a calendar URL
+        public ICommand ImportCalendarCommand { get; }
+
+        private bool _isImportingCalendar;
+
         public MainViewModel()
         {
             _taskService = new TaskService();
+            _calendarImportService = new CalendarImportService();
             Tasks = new ObservableCollection<TaskItem>();
 
             // Bind commands to their methods
@@ -109,6 +120,7 @@ namespace DesktopHelper.ViewModels
             DeleteTaskCommand = new RelayCommand<TaskItem>(DeleteTask, CanDeleteTask);
             StartTimerCommand = new RelayCommand(StartTimer);
             ResetTimerCommand = new RelayCommand(ResetTimer);
+            ImportCalendarCommand = new RelayCommand(ImportCalendar, CanImportCalendar);
 
             // Load tasks from file on startup
             LoadTasks();
@@ -136,6 +148,7 @@ namespace DesktopHelper.ViewModels
                 // Detach event handlers from old list
                 if (_tasks != null)
                 {
+                    _tasks.CollectionChanged -= Tasks_CollectionChanged;
                     foreach (var task in _tasks)
                     {
                         task.PropertyChanged -= Task_PropertyChanged;
@@ -151,6 +164,7 @@ namespace DesktopHelper.ViewModels
                     {
                         task.PropertyChanged += Task_PropertyChanged;
                     }
+                    _tasks.CollectionChanged += Tasks_CollectionChanged;
                 }
 
                 OnPropertyChanged(nameof(Tasks));
@@ -197,10 +211,113 @@ namespace DesktopHelper.ViewModels
         // Determines if a task can be deleted
         private bool CanDeleteTask(TaskItem task) => task != null;
 
+        // Determines if importing can occur
+        private bool CanImportCalendar() => !_isImportingCalendar;
+
+        // Imports tasks from a calendar URL and merges them into the task list
+        private async void ImportCalendar()
+        {
+            if (string.IsNullOrWhiteSpace(CalendarUrl))
+            {
+                return;
+            }
+
+            _isImportingCalendar = true;
+            CommandManager.InvalidateRequerySuggested();
+
+            try
+            {
+                var importedTasks = await _calendarImportService.ImportFromGoogleCalendarAsync(CalendarUrl.Trim());
+                if (importedTasks == null || importedTasks.Count == 0)
+                {
+                    return;
+                }
+
+                if (Tasks == null)
+                {
+                    Tasks = new ObservableCollection<TaskItem>();
+                }
+
+                bool tasksAdded = false;
+                foreach (var importedTask in importedTasks)
+                {
+                    if (importedTask == null)
+                    {
+                        continue;
+                    }
+
+                    bool alreadyExists = false;
+
+                    if (!string.IsNullOrWhiteSpace(importedTask.ExternalId))
+                    {
+                        alreadyExists = Tasks.Any(existingTask =>
+                            existingTask != null &&
+                            string.Equals(existingTask.ExternalId, importedTask.ExternalId, StringComparison.OrdinalIgnoreCase));
+                    }
+
+                    if (!alreadyExists)
+                    {
+                        alreadyExists = Tasks.Any(existingTask =>
+                            existingTask != null &&
+                            string.Equals(existingTask.TaskName?.Trim(), importedTask.TaskName?.Trim(), StringComparison.OrdinalIgnoreCase) &&
+                            Nullable.Equals(existingTask.DueDate?.Date, importedTask.DueDate?.Date));
+                    }
+
+                    if (!alreadyExists)
+                    {
+                        importedTask.TaskName = string.IsNullOrWhiteSpace(importedTask.TaskName)
+                            ? "Calendar Event"
+                            : importedTask.TaskName.Trim();
+                        Tasks.Add(importedTask);
+                        tasksAdded = true;
+                    }
+                }
+
+                if (tasksAdded)
+                {
+                    SaveTasks();
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Failed to import calendar: {ex}");
+            }
+            finally
+            {
+                _isImportingCalendar = false;
+                CommandManager.InvalidateRequerySuggested();
+            }
+        }
+
         // Called whenever any task changes, triggering a save
         private void Task_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             SaveTasks();
+        }
+
+        private void Tasks_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (e.NewItems != null)
+            {
+                foreach (var item in e.NewItems)
+                {
+                    if (item is TaskItem task)
+                    {
+                        task.PropertyChanged += Task_PropertyChanged;
+                    }
+                }
+            }
+
+            if (e.OldItems != null)
+            {
+                foreach (var item in e.OldItems)
+                {
+                    if (item is TaskItem task)
+                    {
+                        task.PropertyChanged -= Task_PropertyChanged;
+                    }
+                }
+            }
         }
     }
 }

@@ -183,7 +183,8 @@
                            Margin="0,0,10,0" FontSize="14"/>
                 <TextBox Width="200" VerticalAlignment="Center" Margin="0,0,10,0"
                          Text="{Binding CalendarUrl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                <Button Content="{Binding ImportButtonText}" Style="{StaticResource PrimaryButtonStyle}" Width="80" Height="30"/>
+                <Button Content="{Binding ImportButtonText}" Style="{StaticResource PrimaryButtonStyle}" Width="80" Height="30"
+                        Command="{Binding ImportCalendarCommand}"/>
             </StackPanel>
         </Grid>
     </Grid>
