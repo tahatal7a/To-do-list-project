@@ -60,8 +60,11 @@ namespace DesktopHelper.Models.Services
             request.SingleEvents = true;
             request.MaxResults = 2500;
             request.OrderBy = EventsResource.ListRequest.OrderByEnum.StartTime;
-            request.TimeMin = timeMin ?? DateTime.UtcNow.AddMonths(-1);
-            request.TimeMax = timeMax ?? DateTime.UtcNow.AddYears(1);
+            var (defaultTimeMin, defaultTimeMax) = GetNextMonthWindow();
+            var effectiveTimeMin = timeMin ?? defaultTimeMin;
+            var effectiveTimeMax = timeMax ?? defaultTimeMax;
+            request.TimeMin = effectiveTimeMin;
+            request.TimeMax = effectiveTimeMax;
 
             var events = await request.ExecuteAsync(cancellationToken).ConfigureAwait(false);
             var tasks = new List<TaskItem>();
@@ -76,6 +79,11 @@ namespace DesktopHelper.Models.Services
                 var start = GetDateTime(eventItem.Start);
                 var end = GetDateTime(eventItem.End);
                 var dueDate = start ?? end;
+
+                if (dueDate.HasValue && (dueDate.Value.ToUniversalTime() < effectiveTimeMin || dueDate.Value.ToUniversalTime() >= effectiveTimeMax))
+                {
+                    continue;
+                }
 
                 bool hasReminder = eventItem.Reminders?.UseDefault == true;
 
@@ -102,6 +110,15 @@ namespace DesktopHelper.Models.Services
             }
 
             return tasks;
+        }
+
+        private static (DateTime TimeMin, DateTime TimeMax) GetNextMonthWindow()
+        {
+            var localNow = DateTime.Now;
+            var startOfNextMonthLocal = new DateTime(localNow.Year, localNow.Month, 1, 0, 0, 0, DateTimeKind.Local).AddMonths(1);
+            var startOfFollowingMonthLocal = startOfNextMonthLocal.AddMonths(1);
+
+            return (startOfNextMonthLocal.ToUniversalTime(), startOfFollowingMonthLocal.ToUniversalTime());
         }
 
         private async Task EnsureServiceAsync(CancellationToken cancellationToken)

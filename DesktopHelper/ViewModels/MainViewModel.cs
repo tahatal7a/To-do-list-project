@@ -1,4 +1,5 @@
 using DesktopHelper.Models.Services;
+using Google.Apis.Auth.OAuth2.Responses;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -71,7 +72,7 @@ namespace DesktopHelper.ViewModels
         public string AddButtonText { get; set; } = "Add";
 
         // The text on the "Import" button
-        private string _importButtonText = "Import from Google";
+        private string _importButtonText = "Import Next Month";
 
         public string ImportButtonText
         {
@@ -86,7 +87,7 @@ namespace DesktopHelper.ViewModels
             }
         }
 
-        private string _importStatusMessage = "Connect your Google account to import events.";
+        private string _importStatusMessage = "Click import to sign in or sign up with Google and load next month's events.";
 
         public string ImportStatusMessage
         {
@@ -115,6 +116,7 @@ namespace DesktopHelper.ViewModels
 
         // Command to import tasks from a calendar URL
         public ICommand ImportCalendarCommand { get; }
+        public ICommand OpenGoogleAccountCommand { get; }
 
         private bool _isImportingCalendar;
 
@@ -147,6 +149,7 @@ namespace DesktopHelper.ViewModels
             StartTimerCommand = new RelayCommand(StartTimer);
             ResetTimerCommand = new RelayCommand(ResetTimer);
             ImportCalendarCommand = new RelayCommand(ImportCalendar, CanImportCalendar);
+            OpenGoogleAccountCommand = new RelayCommand(OpenGoogleAccountPage);
 
             // Load tasks from file on startup
             LoadTasks();
@@ -250,7 +253,7 @@ namespace DesktopHelper.ViewModels
 
             IsImportingCalendar = true;
             ImportButtonText = "Importing...";
-            ImportStatusMessage = "Signing in to Google Calendar...";
+            ImportStatusMessage = "Complete the Google sign-in or sign-up flow in your browser...";
 
             try
             {
@@ -314,6 +317,10 @@ namespace DesktopHelper.ViewModels
                     ImportStatusMessage = "No new events to import.";
                 }
             }
+            catch (TokenResponseException)
+            {
+                ImportStatusMessage = "Google account authorization failed. Sign in or create an account and try again.";
+            }
             catch (FileNotFoundException)
             {
                 ImportStatusMessage = "Place your google-credentials.json file next to the app and try again.";
@@ -330,7 +337,25 @@ namespace DesktopHelper.ViewModels
             finally
             {
                 IsImportingCalendar = false;
-                ImportButtonText = "Import from Google";
+                ImportButtonText = "Import Next Month";
+            }
+        }
+
+        private void OpenGoogleAccountPage()
+        {
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = "https://accounts.google.com/signup",
+                    UseShellExecute = true
+                });
+                ImportStatusMessage = "Follow the browser window to create a Google account, then return and import.";
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Unable to launch Google sign-up page: {ex}");
+                ImportStatusMessage = "Open https://accounts.google.com/signup in your browser to create an account.";
             }
         }
 
