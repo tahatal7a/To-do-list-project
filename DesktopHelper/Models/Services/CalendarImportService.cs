@@ -146,7 +146,7 @@ namespace DesktopHelper.Models.Services
 
                 using (var stream = new FileStream(_credentialsFilePath, FileMode.Open, FileAccess.Read))
                 {
-                    var clientSecrets = (await GoogleClientSecrets.FromStream(stream).ConfigureAwait(false)).Secrets;
+                    var clientSecrets = GoogleClientSecrets.FromStream(stream).Secrets;
 
                     var credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
                         clientSecrets,
