@@ -1,5 +1,6 @@
 using DesktopHelper.Models.Services;
 using Google.Apis.Auth.OAuth2.Responses;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,6 +8,7 @@ using System.Collections.Specialized;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using DesktopHelper.Commands;
 
@@ -251,65 +253,82 @@ namespace DesktopHelper.ViewModels
                 return;
             }
 
+            if (!EnsureCredentialsAvailable())
+            {
+                return;
+            }
+
+            await RunImportAsync();
+        }
+
+        private bool EnsureCredentialsAvailable()
+        {
+            if (_calendarImportService.CredentialsFileExists())
+            {
+                return true;
+            }
+
+            ImportStatusMessage = "Locate the google-credentials.json file downloaded from Google Cloud to connect.";
+            return PromptForCredentialsFile();
+        }
+
+        private bool PromptForCredentialsFile()
+        {
+            var dialog = new OpenFileDialog
+            {
+                Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*",
+                Title = "Select Google OAuth credentials (google-credentials.json)",
+                CheckFileExists = true
+            };
+
+            bool? result;
+            try
+            {
+                result = dialog.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Failed to display credentials picker: {ex}");
+                ImportStatusMessage = "Unable to open the file picker. Copy google-credentials.json next to the app and try again.";
+                return false;
+            }
+
+            if (result != true)
+            {
+                ImportStatusMessage = "Google Calendar import canceled before selecting credentials.";
+                return false;
+            }
+
+            try
+            {
+                _calendarImportService.CopyCredentialsFile(dialog.FileName);
+                ImportStatusMessage = "Credentials saved. Continue in the browser to authorize Google Calendar access.";
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Failed to copy credentials file: {ex}");
+                ImportStatusMessage = "Unable to use that credentials file. Download a new OAuth client secret JSON and try again.";
+                return false;
+            }
+        }
+
+        private async Task RunImportAsync()
+        {
             IsImportingCalendar = true;
             ImportButtonText = "Importing...";
             ImportStatusMessage = "Complete the Google sign-in or sign-up flow in your browser...";
 
             try
             {
-                var importedTasks = await _calendarImportService.ImportFromGoogleCalendarAsync();
-                if (importedTasks == null || importedTasks.Count == 0)
+                var (addedCount, hadEvents) = await MergeImportedTasksAsync();
+
+                if (!hadEvents)
                 {
                     ImportStatusMessage = "No events were returned from Google Calendar.";
-                    return;
                 }
-
-                if (Tasks == null)
+                else if (addedCount > 0)
                 {
-                    Tasks = new ObservableCollection<TaskItem>();
-                }
-
-                int addedCount = 0;
-                foreach (var importedTask in importedTasks)
-                {
-                    if (importedTask == null)
-                    {
-                        continue;
-                    }
-
-                    bool alreadyExists = false;
-
-                    if (!string.IsNullOrWhiteSpace(importedTask.ExternalId))
-                    {
-                        alreadyExists = Tasks.Any(existingTask =>
-                            existingTask != null &&
-                            string.Equals(existingTask.ExternalId, importedTask.ExternalId, StringComparison.OrdinalIgnoreCase));
-                    }
-
-                    if (!alreadyExists)
-                    {
-                        alreadyExists = Tasks.Any(existingTask =>
-                            existingTask != null &&
-                            string.Equals(existingTask.TaskName?.Trim(), importedTask.TaskName?.Trim(), StringComparison.OrdinalIgnoreCase) &&
-                            Nullable.Equals(existingTask.DueDate?.Date, importedTask.DueDate?.Date));
-                    }
-
-                    if (alreadyExists)
-                    {
-                        continue;
-                    }
-
-                    importedTask.TaskName = string.IsNullOrWhiteSpace(importedTask.TaskName)
-                        ? "Calendar Event"
-                        : importedTask.TaskName.Trim();
-
-                    Tasks.Add(importedTask);
-                    addedCount++;
-                }
-
-                if (addedCount > 0)
-                {
-                    SaveTasks();
                     ImportStatusMessage = $"Imported {addedCount} event{(addedCount == 1 ? string.Empty : "s")} from Google Calendar.";
                 }
                 else
@@ -339,6 +358,65 @@ namespace DesktopHelper.ViewModels
                 IsImportingCalendar = false;
                 ImportButtonText = "Import Next Month";
             }
+        }
+
+        private async Task<(int addedCount, bool hadEvents)> MergeImportedTasksAsync()
+        {
+            var importedTasks = await _calendarImportService.ImportFromGoogleCalendarAsync();
+            if (importedTasks == null || importedTasks.Count == 0)
+            {
+                return (0, false);
+            }
+
+            if (Tasks == null)
+            {
+                Tasks = new ObservableCollection<TaskItem>();
+            }
+
+            int addedCount = 0;
+            foreach (var importedTask in importedTasks)
+            {
+                if (importedTask == null)
+                {
+                    continue;
+                }
+
+                bool alreadyExists = false;
+
+                if (!string.IsNullOrWhiteSpace(importedTask.ExternalId))
+                {
+                    alreadyExists = Tasks.Any(existingTask =>
+                        existingTask != null &&
+                        string.Equals(existingTask.ExternalId, importedTask.ExternalId, StringComparison.OrdinalIgnoreCase));
+                }
+
+                if (!alreadyExists)
+                {
+                    alreadyExists = Tasks.Any(existingTask =>
+                        existingTask != null &&
+                        string.Equals(existingTask.TaskName?.Trim(), importedTask.TaskName?.Trim(), StringComparison.OrdinalIgnoreCase) &&
+                        Nullable.Equals(existingTask.DueDate?.Date, importedTask.DueDate?.Date));
+                }
+
+                if (alreadyExists)
+                {
+                    continue;
+                }
+
+                importedTask.TaskName = string.IsNullOrWhiteSpace(importedTask.TaskName)
+                    ? "Calendar Event"
+                    : importedTask.TaskName.Trim();
+
+                Tasks.Add(importedTask);
+                addedCount++;
+            }
+
+            if (addedCount > 0)
+            {
+                SaveTasks();
+            }
+
+            return (addedCount, true);
         }
 
         private void OpenGoogleAccountPage()

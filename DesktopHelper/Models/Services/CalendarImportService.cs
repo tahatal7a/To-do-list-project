@@ -24,6 +24,8 @@ namespace DesktopHelper.Models.Services
 
         private CalendarService _calendarService;
 
+        public string CredentialsFilePath => _credentialsFilePath;
+
         public CalendarImportService()
             : this("google-credentials.json", Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GoogleCalendarTokens"))
         {
@@ -45,6 +47,47 @@ namespace DesktopHelper.Models.Services
                 : (Path.IsPathRooted(tokenDirectoryPath)
                     ? tokenDirectoryPath
                     : Path.Combine(AppDomain.CurrentDomain.BaseDirectory, tokenDirectoryPath));
+        }
+
+        public bool CredentialsFileExists()
+        {
+            return File.Exists(_credentialsFilePath);
+        }
+
+        public void CopyCredentialsFile(string sourcePath)
+        {
+            if (string.IsNullOrWhiteSpace(sourcePath))
+            {
+                throw new ArgumentException("Credentials source path cannot be empty.", nameof(sourcePath));
+            }
+
+            if (!File.Exists(sourcePath))
+            {
+                throw new FileNotFoundException("The selected Google credentials file could not be found.", sourcePath);
+            }
+
+            var destinationFullPath = Path.GetFullPath(_credentialsFilePath);
+            var sourceFullPath = Path.GetFullPath(sourcePath);
+
+            if (string.Equals(sourceFullPath, destinationFullPath, StringComparison.OrdinalIgnoreCase))
+            {
+                return;
+            }
+
+            var destinationDirectory = Path.GetDirectoryName(_credentialsFilePath);
+            if (!string.IsNullOrEmpty(destinationDirectory))
+            {
+                Directory.CreateDirectory(destinationDirectory);
+            }
+
+            File.Copy(sourcePath, _credentialsFilePath, overwrite: true);
+
+            if (Directory.Exists(_tokenDirectoryPath))
+            {
+                Directory.Delete(_tokenDirectoryPath, recursive: true);
+            }
+
+            _calendarService = null;
         }
 
         public async Task<List<TaskItem>> ImportFromGoogleCalendarAsync(
