@@ -45,3 +45,36 @@ The first release will include a storage system for the task list and a placehol
 # Tool Setup
 Github version control<br>
 Visual Studio<br>
+
+## Testing the Google Calendar Import Feature
+
+Follow these steps to verify the Google Calendar import workflow that was introduced in the latest updates:
+
+1. **Prepare Google API credentials**
+   - Create a Google Cloud project (or reuse an existing one) and enable the *Google Calendar API*.
+   - Configure an OAuth consent screen for an external desktop application and add the `https://www.googleapis.com/auth/calendar.readonly` scope.
+   - Create *OAuth client ID* credentials with the application type set to **Desktop app** and download the JSON file.
+   - Rename the downloaded file to `google-credentials.json` and place it next to the desktop helper executable (or in the project root while debugging in Visual Studio). The app will create a `GoogleCalendarTokens` directory beside this file to store refresh tokens.
+
+2. **Restore packages and build the app**
+   - Open `DesktopHelper.sln` in Visual Studio (2019 or later).
+   - Allow NuGet to restore the Google API client libraries that were added in the project file.
+   - Build the `DesktopHelper` project. Any build errors here must be resolved before you can test the import button.
+
+3. **Launch the application**
+   - Run the WPF application from Visual Studio (`F5`) or by launching the compiled executable.
+   - Confirm that the main window shows the **Import Next Month** button and the **Create Google Account** link.
+
+4. **Test the Google sign-in flow**
+   - Click **Import Next Month**. A browser window should open prompting you to sign in to your Google account and grant read-only access to your calendar.
+   - If you do not yet have an account, use the **Create Google Account** action in the app to open the official sign-up page, then restart the import.
+   - After completing the OAuth flow, return to the app. The status text should change to reflect the result.
+
+5. **Validate imported tasks**
+   - Populate your Google Calendar with events scheduled between the first day of next month and the first day of the following month.
+   - Run the import again. Tasks representing the new events should appear in the task list with their due dates and reminder flags.
+   - Re-running the import without changing your calendar should not duplicate tasks because the app stores each event's Google `Id` in the `ExternalId` field.
+
+6. **Repeatability tips**
+   - Delete the `GoogleCalendarTokens` folder before the next run if you need to test the OAuth consent screen from scratch.
+   - Remove or adjust the Google Calendar events to confirm that only items within the next-month window are imported.
