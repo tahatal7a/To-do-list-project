@@ -58,7 +58,8 @@ Follow these steps to verify the Google Calendar import workflow that was introd
 
 2. **Restore packages and build the app**
    - Open `DesktopHelper.sln` in Visual Studio (2019 or later).
-   - Allow NuGet to restore the Google API client libraries that were added in the project file.
+   - When the solution loads, Visual Studio prompts to **Restore** missing packages—accept the prompt or right-click the solution in Solution Explorer and choose **Restore NuGet Packages**. This downloads all dependencies (including the Google APIs) into the `packages/` directory.
+   - If you prefer the command line, run `nuget restore DesktopHelper.sln` (or `dotnet restore` if you have the .NET SDK installed) from the project root to perform the same step before opening the solution.
    - Build the `DesktopHelper` project. Any build errors here must be resolved before you can test the import button.
 
 3. **Launch the application**
