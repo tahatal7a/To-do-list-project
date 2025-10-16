@@ -54,7 +54,26 @@ Follow these steps to verify the Google Calendar import workflow that was introd
    - Create a Google Cloud project (or reuse an existing one) and enable the *Google Calendar API*.
    - Configure an OAuth consent screen for an external desktop application and add the `https://www.googleapis.com/auth/calendar.readonly` scope.
    - Create *OAuth client ID* credentials with the application type set to **Desktop app** and download the JSON file.
-   - Rename the downloaded file to `google-credentials.json` and place it next to the desktop helper executable (or in the project root while debugging in Visual Studio). If you skip this step, the import button now opens a file picker so you can locate the JSON and the app will copy it into place for you. The app creates a `GoogleCalendarTokens` directory beside this file to store refresh tokens.
+   - Open the downloaded JSON in a text editor and confirm it contains an `installed` object with `client_id`, `client_secret`, `token_uri`, and `redirect_uris` fields. If you received credentials like:
+
+     ```json
+     {
+       "installed": {
+         "client_id": "your-client-id.apps.googleusercontent.com",
+         "project_id": "your-project-id",
+         "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+         "token_uri": "https://oauth2.googleapis.com/token",
+         "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+         "client_secret": "your-client-secret",
+         "redirect_uris": [
+           "http://localhost"
+         ]
+       }
+     }
+     ```
+
+     copy the entire contents into a file named `google-credentials.json`. Keep this file private—do not commit it to source control.
+   - Place `google-credentials.json` next to the desktop helper executable (or in the project root while debugging in Visual Studio). If you skip this step, the import button now opens a file picker so you can locate the JSON and the app will copy it into place for you. The app creates a `GoogleCalendarTokens` directory beside this file to store refresh tokens.
 
 2. **Restore packages and build the app**
    - Open `DesktopHelper.sln` in Visual Studio (2019 or later).

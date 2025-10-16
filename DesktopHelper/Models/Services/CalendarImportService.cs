@@ -66,6 +66,11 @@ namespace DesktopHelper.Models.Services
                 throw new FileNotFoundException("The selected Google credentials file could not be found.", sourcePath);
             }
 
+            using (var validationStream = new FileStream(sourcePath, FileMode.Open, FileAccess.Read))
+            {
+                ValidateCredentialStream(validationStream);
+            }
+
             var destinationFullPath = Path.GetFullPath(_credentialsFilePath);
             var sourceFullPath = Path.GetFullPath(sourcePath);
 
@@ -88,6 +93,34 @@ namespace DesktopHelper.Models.Services
             }
 
             _calendarService = null;
+        }
+
+        public bool TryValidateCredentials(out string errorMessage)
+        {
+            try
+            {
+                using (var stream = new FileStream(_credentialsFilePath, FileMode.Open, FileAccess.Read))
+                {
+                    ValidateCredentialStream(stream);
+                }
+
+                errorMessage = null;
+                return true;
+            }
+            catch (FileNotFoundException)
+            {
+                errorMessage = "Google credentials file is missing.";
+            }
+            catch (InvalidDataException ex)
+            {
+                errorMessage = ex.Message;
+            }
+            catch (Exception ex)
+            {
+                errorMessage = $"Unable to read google-credentials.json ({ex.Message}).";
+            }
+
+            return false;
         }
 
         public async Task<List<TaskItem>> ImportFromGoogleCalendarAsync(
@@ -189,7 +222,7 @@ namespace DesktopHelper.Models.Services
 
                 using (var stream = new FileStream(_credentialsFilePath, FileMode.Open, FileAccess.Read))
                 {
-                    var clientSecrets = GoogleClientSecrets.FromStream(stream).Secrets;
+                    var clientSecrets = LoadClientSecrets(stream);
 
                     var credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
                         clientSecrets,
@@ -230,6 +263,51 @@ namespace DesktopHelper.Models.Services
             }
 
             return null;
+        }
+
+        private static ClientSecrets LoadClientSecrets(Stream stream)
+        {
+            try
+            {
+                var secrets = GoogleClientSecrets.FromStream(stream).Secrets;
+
+                if (secrets == null ||
+                    string.IsNullOrWhiteSpace(secrets.ClientId) ||
+                    string.IsNullOrWhiteSpace(secrets.ClientSecret))
+                {
+                    throw new InvalidDataException("The google-credentials.json file is missing the client_id or client_secret fields.");
+                }
+
+                return secrets;
+            }
+            catch (InvalidDataException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidDataException("Unable to parse google-credentials.json. Download a new OAuth client secret JSON file and try again.", ex);
+            }
+        }
+
+        private static void ValidateCredentialStream(Stream stream)
+        {
+            if (stream == null)
+            {
+                throw new ArgumentNullException(nameof(stream));
+            }
+
+            if (!stream.CanRead)
+            {
+                throw new InvalidDataException("Unable to read the google-credentials.json file.");
+            }
+
+            LoadClientSecrets(stream);
+
+            if (stream.CanSeek)
+            {
+                stream.Seek(0, SeekOrigin.Begin);
+            }
         }
     }
 }

@@ -265,7 +265,16 @@ namespace DesktopHelper.ViewModels
         {
             if (_calendarImportService.CredentialsFileExists())
             {
-                return true;
+                if (_calendarImportService.TryValidateCredentials(out var errorMessage))
+                {
+                    return true;
+                }
+
+                ImportStatusMessage = string.IsNullOrWhiteSpace(errorMessage)
+                    ? "The existing google-credentials.json file is invalid. Select a new file to continue."
+                    : errorMessage;
+
+                return PromptForCredentialsFile();
             }
 
             ImportStatusMessage = "Locate the google-credentials.json file downloaded from Google Cloud to connect.";
@@ -305,6 +314,12 @@ namespace DesktopHelper.ViewModels
                 ImportStatusMessage = "Credentials saved. Continue in the browser to authorize Google Calendar access.";
                 return true;
             }
+            catch (InvalidDataException ex)
+            {
+                Debug.WriteLine($"Failed to copy credentials file: {ex}");
+                ImportStatusMessage = ex.Message;
+                return false;
+            }
             catch (Exception ex)
             {
                 Debug.WriteLine($"Failed to copy credentials file: {ex}");
@@ -343,6 +358,10 @@ namespace DesktopHelper.ViewModels
             catch (FileNotFoundException)
             {
                 ImportStatusMessage = "Place your google-credentials.json file next to the app and try again.";
+            }
+            catch (InvalidDataException ex)
+            {
+                ImportStatusMessage = ex.Message;
             }
             catch (OperationCanceledException)
             {
