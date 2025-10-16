@@ -99,6 +99,7 @@
     <Compile Include="HelperPrograms\MainHelper.cs" />
     <Compile Include="HelperPrograms\HelperWindow.cs" />
     <Compile Include="HelperPrograms\Running\Time.cs" />
+    <Compile Include="Models\Services\CalendarImportService.cs" />
     <Compile Include="Models\Services\TaskService.cs" />
     <Compile Include="Models\TaskModels\TaskItem.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
