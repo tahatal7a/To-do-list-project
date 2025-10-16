@@ -1,0 +1,178 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4D79E320-42B9-4972-8F06-204F63E62BB7}|DesktopHelper\\DesktopHelper.csproj|c:\\users\\talha\\onedrive\\desktop\\desktop helper\\desktophelper\\helperprograms\\helperwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D79E320-42B9-4972-8F06-204F63E62BB7}|DesktopHelper\\DesktopHelper.csproj|solutionrelative:desktophelper\\helperprograms\\helperwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D79E320-42B9-4972-8F06-204F63E62BB7}|DesktopHelper\\DesktopHelper.csproj|C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\desktophelper\\helperprograms\\running\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D79E320-42B9-4972-8F06-204F63E62BB7}|DesktopHelper\\DesktopHelper.csproj|solutionrelative:desktophelper\\helperprograms\\running\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D79E320-42B9-4972-8F06-204F63E62BB7}|DesktopHelper\\DesktopHelper.csproj|C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\desktophelper\\helperprograms\\mainhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D79E320-42B9-4972-8F06-204F63E62BB7}|DesktopHelper\\DesktopHelper.csproj|solutionrelative:desktophelper\\helperprograms\\mainhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D79E320-42B9-4972-8F06-204F63E62BB7}|DesktopHelper\\DesktopHelper.csproj|C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\desktophelper\\helperprograms\\running\\time.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D79E320-42B9-4972-8F06-204F63E62BB7}|DesktopHelper\\DesktopHelper.csproj|solutionrelative:desktophelper\\helperprograms\\running\\time.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D79E320-42B9-4972-8F06-204F63E62BB7}|DesktopHelper\\DesktopHelper.csproj|C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\desktophelper\\helperprograms\\bufferedpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D79E320-42B9-4972-8F06-204F63E62BB7}|DesktopHelper\\DesktopHelper.csproj|solutionrelative:desktophelper\\helperprograms\\bufferedpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D79E320-42B9-4972-8F06-204F63E62BB7}|DesktopHelper\\DesktopHelper.csproj|C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\desktophelper\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D79E320-42B9-4972-8F06-204F63E62BB7}|DesktopHelper\\DesktopHelper.csproj|solutionrelative:desktophelper\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D79E320-42B9-4972-8F06-204F63E62BB7}|DesktopHelper\\DesktopHelper.csproj|C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\desktophelper\\helperprograms\\bufferedpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4D79E320-42B9-4972-8F06-204F63E62BB7}|DesktopHelper\\DesktopHelper.csproj|solutionrelative:desktophelper\\helperprograms\\bufferedpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D79E320-42B9-4972-8F06-204F63E62BB7}|DesktopHelper\\DesktopHelper.csproj|C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\desktophelper\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4D79E320-42B9-4972-8F06-204F63E62BB7}|DesktopHelper\\DesktopHelper.csproj|solutionrelative:desktophelper\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D79E320-42B9-4972-8F06-204F63E62BB7}|DesktopHelper\\DesktopHelper.csproj|C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\desktophelper\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D79E320-42B9-4972-8F06-204F63E62BB7}|DesktopHelper\\DesktopHelper.csproj|solutionrelative:desktophelper\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D79E320-42B9-4972-8F06-204F63E62BB7}|DesktopHelper\\DesktopHelper.csproj|C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\desktophelper\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4D79E320-42B9-4972-8F06-204F63E62BB7}|DesktopHelper\\DesktopHelper.csproj|solutionrelative:desktophelper\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HelperWindow.cs",
+              "DocumentMoniker": "C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\DesktopHelper\\HelperPrograms\\HelperWindow.cs",
+              "RelativeDocumentMoniker": "DesktopHelper\\HelperPrograms\\HelperWindow.cs",
+              "ToolTip": "C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\DesktopHelper\\HelperPrograms\\HelperWindow.cs",
+              "RelativeToolTip": "DesktopHelper\\HelperPrograms\\HelperWindow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFQAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T00:38:02.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Helper.cs",
+              "DocumentMoniker": "C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\DesktopHelper\\HelperPrograms\\Running\\Helper.cs",
+              "RelativeDocumentMoniker": "DesktopHelper\\HelperPrograms\\Running\\Helper.cs",
+              "ToolTip": "C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\DesktopHelper\\HelperPrograms\\Running\\Helper.cs",
+              "RelativeToolTip": "DesktopHelper\\HelperPrograms\\Running\\Helper.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAQwCsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T01:00:38.988Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainHelper.cs",
+              "DocumentMoniker": "C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\DesktopHelper\\HelperPrograms\\MainHelper.cs",
+              "RelativeDocumentMoniker": "DesktopHelper\\HelperPrograms\\MainHelper.cs",
+              "ToolTip": "C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\DesktopHelper\\HelperPrograms\\MainHelper.cs",
+              "RelativeToolTip": "DesktopHelper\\HelperPrograms\\MainHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T00:37:48.72Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BufferedPanel.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\DesktopHelper\\HelperPrograms\\BufferedPanel.cs",
+              "RelativeDocumentMoniker": "DesktopHelper\\HelperPrograms\\BufferedPanel.cs",
+              "ToolTip": "C:\\Users\\pakre\\Downloads\\uptodate\\desktop-helper-savefeature\\DesktopHelper\\HelperPrograms\\BufferedPanel.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\pakre\\Downloads\\uptodate\\desktop-helper-savefeature\\DesktopHelper\\HelperPrograms\\BufferedPanel.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T03:12:22.424Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BufferedPanel.cs",
+              "DocumentMoniker": "C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\DesktopHelper\\HelperPrograms\\BufferedPanel.cs",
+              "RelativeDocumentMoniker": "DesktopHelper\\HelperPrograms\\BufferedPanel.cs",
+              "ToolTip": "C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\DesktopHelper\\HelperPrograms\\BufferedPanel.cs",
+              "RelativeToolTip": "DesktopHelper\\HelperPrograms\\BufferedPanel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T01:00:55.831Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\DesktopHelper\\Views\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "DesktopHelper\\Views\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\DesktopHelper\\Views\\MainWindow.xaml.cs",
+              "RelativeToolTip": "DesktopHelper\\Views\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T00:37:59.583Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Time.cs",
+              "DocumentMoniker": "C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\DesktopHelper\\HelperPrograms\\Running\\Time.cs",
+              "RelativeDocumentMoniker": "DesktopHelper\\HelperPrograms\\Running\\Time.cs",
+              "ToolTip": "C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\DesktopHelper\\HelperPrograms\\Running\\Time.cs",
+              "RelativeToolTip": "DesktopHelper\\HelperPrograms\\Running\\Time.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAACDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T01:00:25.632Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\DesktopHelper\\Views\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "DesktopHelper\\Views\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\DesktopHelper\\Views\\MainWindow.xaml",
+              "RelativeToolTip": "DesktopHelper\\Views\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-28T00:37:55.185Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\DesktopHelper\\ViewModels\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "DesktopHelper\\ViewModels\\MainViewModel.cs",
+              "ToolTip": "C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\DesktopHelper\\ViewModels\\MainViewModel.cs",
+              "RelativeToolTip": "DesktopHelper\\ViewModels\\MainViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T00:37:51.47Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\DesktopHelper\\App.xaml",
+              "RelativeDocumentMoniker": "DesktopHelper\\App.xaml",
+              "ToolTip": "C:\\Users\\talha\\OneDrive\\Desktop\\desktop helper\\DesktopHelper\\App.xaml",
+              "RelativeToolTip": "DesktopHelper\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-28T00:37:44.362Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\bin\Debug\DesktopHelper.exe.config
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\bin\Debug\DesktopHelper.exe
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\bin\Debug\DesktopHelper.pdb
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\bin\Debug\System.Buffers.dll
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\bin\Debug\System.IO.Pipelines.dll
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\bin\Debug\System.Memory.dll
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\bin\Debug\System.Text.Json.dll
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\bin\Debug\System.ValueTuple.dll
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\bin\Debug\System.Buffers.xml
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\bin\Debug\System.IO.Pipelines.xml
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\bin\Debug\System.Memory.xml
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\bin\Debug\System.Text.Json.xml
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\bin\Debug\System.ValueTuple.xml
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\obj\Debug\DesktopHelper.csproj.AssemblyReference.cache
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\obj\Debug\Views\styles.baml
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\obj\Debug\Views\MainWindow.g.cs
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\obj\Debug\App.g.cs
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\obj\Debug\DesktopHelper_MarkupCompile.cache
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\obj\Debug\DesktopHelper_MarkupCompile.lref
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\obj\Debug\App.baml
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\obj\Debug\Views\MainWindow.baml
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\obj\Debug\DesktopHelper.g.resources
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\obj\Debug\DesktopHelper.Properties.Resources.resources
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\obj\Debug\DesktopHelper.csproj.GenerateResource.cache
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\obj\Debug\DesktopHelper.csproj.CoreCompileInputs.cache
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\obj\Debug\DesktopH.F3EC160B.Up2Date
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\obj\Debug\DesktopHelper.exe
+C:\Users\pakre\Downloads\uptodate\desktop-helper-savefeature\DesktopHelper\obj\Debug\DesktopHelper.pdb
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\bin\Debug\DesktopHelper.exe.config
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\bin\Debug\DesktopHelper.exe
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\bin\Debug\DesktopHelper.pdb
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\bin\Debug\System.Buffers.dll
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\bin\Debug\System.IO.Pipelines.dll
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\bin\Debug\System.Memory.dll
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\bin\Debug\System.Text.Json.dll
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\bin\Debug\System.ValueTuple.dll
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\bin\Debug\System.Buffers.xml
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\bin\Debug\System.IO.Pipelines.xml
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\bin\Debug\System.Memory.xml
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\bin\Debug\System.Text.Json.xml
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\bin\Debug\System.ValueTuple.xml
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\obj\Debug\DesktopHelper.csproj.AssemblyReference.cache
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\obj\Debug\Views\styles.baml
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\obj\Debug\Views\MainWindow.g.cs
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\obj\Debug\App.g.cs
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\obj\Debug\DesktopHelper_MarkupCompile.cache
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\obj\Debug\DesktopHelper_MarkupCompile.lref
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\obj\Debug\App.baml
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\obj\Debug\Views\MainWindow.baml
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\obj\Debug\DesktopHelper.g.resources
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\obj\Debug\DesktopHelper.Properties.Resources.resources
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\obj\Debug\DesktopHelper.csproj.GenerateResource.cache
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\obj\Debug\DesktopHelper.csproj.CoreCompileInputs.cache
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\obj\Debug\DesktopH.F3EC160B.Up2Date
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\obj\Debug\DesktopHelper.exe
+C:\Users\pakre\OneDrive\Documents\GitHub\desktop-helper\DesktopHelper\obj\Debug\DesktopHelper.pdb
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\bin\Debug\DesktopHelper.exe.config
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\bin\Debug\DesktopHelper.exe
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\bin\Debug\DesktopHelper.pdb
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\bin\Debug\System.Buffers.dll
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\bin\Debug\System.IO.Pipelines.dll
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\bin\Debug\System.Memory.dll
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\bin\Debug\System.Text.Json.dll
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\bin\Debug\System.ValueTuple.dll
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\bin\Debug\System.Buffers.xml
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\bin\Debug\System.IO.Pipelines.xml
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\bin\Debug\System.Memory.xml
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\bin\Debug\System.Text.Json.xml
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\bin\Debug\System.ValueTuple.xml
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\obj\Debug\DesktopHelper.csproj.AssemblyReference.cache
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\obj\Debug\Views\styles.baml
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\obj\Debug\Views\MainWindow.g.cs
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\obj\Debug\App.g.cs
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\obj\Debug\DesktopHelper_MarkupCompile.cache
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\obj\Debug\DesktopHelper_MarkupCompile.lref
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\obj\Debug\App.baml
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\obj\Debug\Views\MainWindow.baml
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\obj\Debug\DesktopHelper.g.resources
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\obj\Debug\DesktopHelper.Properties.Resources.resources
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\obj\Debug\DesktopHelper.csproj.GenerateResource.cache
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\obj\Debug\DesktopHelper.csproj.CoreCompileInputs.cache
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\obj\Debug\DesktopH.F3EC160B.Up2Date
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\obj\Debug\DesktopHelper.exe
+C:\Users\pakre\Downloads\desktop-helper-helper (1)\desktop-helper-helper\DesktopHelper\obj\Debug\DesktopHelper.pdb
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\bin\Debug\DesktopHelper.exe.config
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\bin\Debug\DesktopHelper.exe
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\bin\Debug\DesktopHelper.pdb
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\bin\Debug\System.Buffers.dll
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\bin\Debug\System.IO.Pipelines.dll
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\bin\Debug\System.Memory.dll
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\bin\Debug\System.Text.Json.dll
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\bin\Debug\System.ValueTuple.dll
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\bin\Debug\System.Buffers.xml
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\bin\Debug\System.IO.Pipelines.xml
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\bin\Debug\System.Memory.xml
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\bin\Debug\System.Text.Json.xml
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\bin\Debug\System.ValueTuple.xml
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\obj\Debug\DesktopHelper.csproj.AssemblyReference.cache
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\obj\Debug\DesktopHelper.exe.config
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\obj\Debug\Views\styles.baml
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\obj\Debug\Views\MainWindow.g.cs
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\obj\Debug\App.g.cs
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\obj\Debug\DesktopHelper_MarkupCompile.cache
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\obj\Debug\DesktopHelper_MarkupCompile.lref
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\obj\Debug\App.baml
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\obj\Debug\Views\MainWindow.baml
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\obj\Debug\DesktopHelper.g.resources
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\obj\Debug\DesktopHelper.Properties.Resources.resources
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\obj\Debug\DesktopHelper.csproj.GenerateResource.cache
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\obj\Debug\DesktopHelper.csproj.CoreCompileInputs.cache
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\obj\Debug\DesktopH.F3EC160B.Up2Date
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\obj\Debug\DesktopHelper.exe
+C:\Users\talha\OneDrive\Desktop\desktop helper\DesktopHelper\obj\Debug\DesktopHelper.pdb
