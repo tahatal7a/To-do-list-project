@@ -152,9 +152,25 @@ namespace DesktopHelper.Models.Services
 
             foreach (var eventItem in events.Items.Where(e => e != null))
             {
-                var start = GetDateTime(eventItem.Start);
-                var end = GetDateTime(eventItem.End);
-                var dueDate = start ?? end;
+                var start = GetDateTimeOffset(eventItem.Start);
+                var end = GetDateTimeOffset(eventItem.End);
+                var pivot = start ?? end;
+                var dueDate = pivot?.LocalDateTime;
+
+                if (pivot.HasValue)
+                {
+                    var pivotUtc = pivot.Value.UtcDateTime;
+                    if (pivotUtc < effectiveTimeMin || pivotUtc >= effectiveTimeMax)
+                    {
+                        continue;
+                    }
+                }
+
+                if (!dueDate.HasValue)
+                {
+                    var fallback = GetDateTime(eventItem.Start) ?? GetDateTime(eventItem.End);
+                    dueDate = fallback;
+                }
 
                 if (dueDate.HasValue && (dueDate.Value.ToUniversalTime() < effectiveTimeMin || dueDate.Value.ToUniversalTime() >= effectiveTimeMax))
                 {
@@ -260,6 +276,60 @@ namespace DesktopHelper.Models.Services
                 DateTime.TryParse(eventDateTime.Date, CultureInfo.InvariantCulture, DateTimeStyles.AssumeLocal, out var parsed))
             {
                 return parsed;
+            }
+
+            return null;
+        }
+
+        private static DateTimeOffset? GetDateTimeOffset(EventDateTime eventDateTime)
+        {
+            if (eventDateTime == null)
+            {
+                return null;
+            }
+
+            if (!string.IsNullOrWhiteSpace(eventDateTime.DateTimeRaw) &&
+                DateTimeOffset.TryParse(eventDateTime.DateTimeRaw, CultureInfo.InvariantCulture, DateTimeStyles.RoundtripKind, out var parsedRaw))
+            {
+                return parsedRaw;
+            }
+
+            if (eventDateTime.DateTime.HasValue)
+            {
+                var dateTime = eventDateTime.DateTime.Value;
+
+                if (!string.IsNullOrWhiteSpace(eventDateTime.TimeZone) && dateTime.Kind == DateTimeKind.Unspecified)
+                {
+                    try
+                    {
+                        var timeZone = TimeZoneInfo.FindSystemTimeZoneById(eventDateTime.TimeZone);
+                        var unspecified = DateTime.SpecifyKind(dateTime, DateTimeKind.Unspecified);
+                        var offset = timeZone.GetUtcOffset(unspecified);
+                        return new DateTimeOffset(unspecified, offset);
+                    }
+                    catch (TimeZoneNotFoundException)
+                    {
+                        // Fall back to treating the time as local below.
+                    }
+                    catch (InvalidTimeZoneException)
+                    {
+                        // Fall back to treating the time as local below.
+                    }
+                }
+
+                if (dateTime.Kind == DateTimeKind.Unspecified)
+                {
+                    dateTime = DateTime.SpecifyKind(dateTime, DateTimeKind.Local);
+                }
+
+                return new DateTimeOffset(dateTime);
+            }
+
+            if (!string.IsNullOrWhiteSpace(eventDateTime.Date) &&
+                DateTime.TryParse(eventDateTime.Date, CultureInfo.InvariantCulture, DateTimeStyles.AssumeLocal, out var parsedDate))
+            {
+                var localDate = DateTime.SpecifyKind(parsedDate, DateTimeKind.Local);
+                return new DateTimeOffset(localDate);
             }
 
             return null;
