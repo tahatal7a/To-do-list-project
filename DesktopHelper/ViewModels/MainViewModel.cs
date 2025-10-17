@@ -351,9 +351,16 @@ namespace DesktopHelper.ViewModels
                     ImportStatusMessage = "No new events to import.";
                 }
             }
-            catch (TokenResponseException)
+            catch (TokenResponseException ex)
             {
-                ImportStatusMessage = "Google account authorization failed. Sign in or create an account and try again.";
+                if (IsAccessBlocked(ex))
+                {
+                    ImportStatusMessage = "Google blocked the sign-in. Add your email as a test user on the OAuth consent screen and try again.";
+                }
+                else
+                {
+                    ImportStatusMessage = "Google account authorization failed. Sign in or create an account and try again.";
+                }
             }
             catch (FileNotFoundException)
             {
@@ -377,6 +384,29 @@ namespace DesktopHelper.ViewModels
                 IsImportingCalendar = false;
                 ImportButtonText = "Import Next Month";
             }
+        }
+
+        private static bool IsAccessBlocked(TokenResponseException ex)
+        {
+            if (ex == null)
+            {
+                return false;
+            }
+
+            var error = ex.Error?.Error;
+            if (!string.IsNullOrWhiteSpace(error) && string.Equals(error, "access_denied", StringComparison.OrdinalIgnoreCase))
+            {
+                return true;
+            }
+
+            if (!string.IsNullOrWhiteSpace(ex.Error?.ErrorDescription) &&
+                ex.Error.ErrorDescription.IndexOf("access blocked", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                return true;
+            }
+
+            return ex.Message?.IndexOf("access_denied", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                   ex.Message?.IndexOf("access blocked", StringComparison.OrdinalIgnoreCase) >= 0;
         }
 
         private async Task<(int addedCount, bool hadEvents)> MergeImportedTasksAsync()
