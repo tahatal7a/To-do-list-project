@@ -6,6 +6,7 @@ public class TaskItem : BaseViewModel
     private string _taskName;
     private DateTime? _dueDate;
     private bool _hasReminder;
+    private string _externalId;
 
     public string TaskName
     {
@@ -33,6 +34,16 @@ public class TaskItem : BaseViewModel
         set
         {
             _hasReminder = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public string ExternalId
+    {
+        get => _externalId;
+        set
+        {
+            _externalId = value;
             OnPropertyChanged();
         }
     }
