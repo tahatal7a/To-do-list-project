@@ -207,10 +207,10 @@ namespace DesktopHelper.Models.Services
         private static (DateTime TimeMin, DateTime TimeMax) GetNextMonthWindow()
         {
             var localNow = DateTime.Now;
-            var startOfNextMonthLocal = new DateTime(localNow.Year, localNow.Month, 1, 0, 0, 0, DateTimeKind.Local).AddMonths(1);
-            var startOfFollowingMonthLocal = startOfNextMonthLocal.AddMonths(1);
+            var timeMin = localNow.ToUniversalTime();
+            var timeMax = localNow.AddDays(90).ToUniversalTime();
 
-            return (startOfNextMonthLocal.ToUniversalTime(), startOfFollowingMonthLocal.ToUniversalTime());
+            return (timeMin, timeMax);
         }
 
         private async Task EnsureServiceAsync(CancellationToken cancellationToken)
