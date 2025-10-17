@@ -101,9 +101,10 @@ Follow these steps to verify the Google Calendar import workflow that was introd
 
 ## Allowing access to an unverified Google app
 
-If you see an **Access blocked** message that says the app has not completed the Google
-verification process, the OAuth client is still in **Testing** mode. While in that state
-Google only allows accounts listed as test users to sign in. To grant yourself access:
+If you see an **Access blocked** dialog (often paired with **Error 403: access_denied**)
+that says the app has not completed the Google verification process, the OAuth client is
+still in **Testing** mode. While in that state Google only allows accounts listed as test
+users to sign in. To grant yourself access:
 
 1. Visit the [Google Cloud Console OAuth consent screen](https://console.cloud.google.com/apis/credentials/consent).
 2. Ensure the publishing status is **Testing** (you do not need to publish the app for
@@ -113,7 +114,8 @@ Google only allows accounts listed as test users to sign in. To grant yourself a
    Desktop Helper app).
 4. Save your changes and wait a minute for them to propagate.
 5. Restart the import flow in the Desktop Helper app and sign in with one of the test
-   accounts you added. Google now allows the authorization to proceed.
+   accounts you added. Google now allows the authorization to proceed and the app confirms
+   the import status once the calendar events load.
 
 If you intend to distribute the application to users outside of the test list, you must
 complete Google’s verification process and publish the OAuth consent screen. Until then,
